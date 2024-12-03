@@ -1,5 +1,8 @@
+extern crate core;
+
 use std::env;
-use crate::days::day01;
+use std::time::Instant;
+use crate::days::{day01, day02, day03};
 
 mod days;
 
@@ -8,10 +11,15 @@ fn main() {
 
     let solver = match day {
         1 => day01::solver,
+        2 => day02::solver,
+        3 => day03::solver,
         _ => panic!("Unknown day: {}", day),
     };
 
+    let now = Instant::now();
     solver();
+    let elapsed = now.elapsed();
+    println!("Time elapsed: {:?}", elapsed);
 }
 
 fn get_day() -> u8 {
