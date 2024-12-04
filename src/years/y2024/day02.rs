@@ -4,7 +4,7 @@ pub fn solver() {
     println!("Day 2:");
 
     let input =
-        fs::read_to_string("./src/days/day02.txt").expect("Should have been able to read the file");
+        fs::read_to_string("./src/years/y2024/day02.txt").expect("Should have been able to read the file");
 
     println!("Part 1: {}", solve_part_1(input.as_str()));
     println!("Part 2: {}", solve_part_2(input.as_str()));
@@ -62,8 +62,8 @@ fn get_reports(input: &str) -> Vec<Vec<usize>> {
 
 #[cfg(test)]
 mod tests {
-    use crate::days::day02::{is_ascending, is_descending, is_tight, solve_part_1, solve_part_2};
     use std::fs;
+    use crate::years::y2024::day02::{is_ascending, is_descending, is_tight, solve_part_1, solve_part_2};
 
     #[test]
     fn test_is_ascending() {
@@ -95,7 +95,7 @@ mod tests {
 
     #[test]
     fn test_part_1() {
-        let contents = fs::read_to_string("./src/days/day02.txt")
+        let contents = fs::read_to_string("./src/years/y2024/day02.txt")
             .expect("Should have been able to read the file");
         assert_eq!(solve_part_1(&contents), 524)
     }
@@ -115,7 +115,7 @@ mod tests {
 
     #[test]
     fn test_part_2() {
-        let contents = fs::read_to_string("./src/days/day02.txt")
+        let contents = fs::read_to_string("./src/years/y2024/day02.txt")
             .expect("Should have been able to read the file");
         assert_eq!(solve_part_2(&contents), 569)
     }

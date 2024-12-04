@@ -5,7 +5,7 @@ pub fn solver() {
     println!("Day 3:");
 
     let input =
-        fs::read_to_string("./src/days/day03.txt").expect("Should have been able to read the file");
+        fs::read_to_string("./src/years/y2024/day03.txt").expect("Should have been able to read the file");
 
     println!("Part 1: {}", solve_part_1(input.as_str()));
     println!("Part 2: {}", solve_part_2(input.as_str()));
@@ -55,11 +55,11 @@ fn mult(input: &str) -> usize {
 #[cfg(test)]
 mod tests {
     use std::fs;
-    use crate::days::day03::{solve_part_1, solve_part_2};
+    use crate::years::y2024::day03::{solve_part_1, solve_part_2};
 
     #[test]
     fn test_part_1() {
-        let input = fs::read_to_string("./src/days/day03.txt").unwrap();
+        let input = fs::read_to_string("./src/years/y2024/day03.txt").unwrap();
         let solution = solve_part_1(&input);
         assert_eq!(solution, 175700056);
     }
@@ -73,7 +73,7 @@ mod tests {
 
     #[test]
     fn test_part_2() {
-        let input = fs::read_to_string("./src/days/day03.txt").unwrap();
+        let input = fs::read_to_string("./src/years/y2024/day03.txt").unwrap();
         let solution = solve_part_2(&input);
         assert_eq!(solution, 71668682);
     }
