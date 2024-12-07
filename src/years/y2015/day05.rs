@@ -17,7 +17,7 @@ fn solve_part_1(input: &str) -> usize {
     let validators: [Validator; 3] = [
         |x| contains_vowels(x, 3),
         |x| contains_duplicates(x),
-        |x| does_not_contain(x, &["ab", "cd", "pq", "xy"]),
+        |x| does_not_contain(x),
     ];
     input
         .lines()
@@ -48,7 +48,8 @@ fn contains_pairs(string: &str) -> bool {
 }
 
 fn contains_vowels(string: &str, at_least: usize) -> bool {
-    string.chars().filter(|&c| "aeiou".contains(c)).count() >= at_least
+    let re = Regex::new(r"[aeiou]").unwrap();
+    re.find_iter(string).count() >= at_least
 }
 
 fn contains_duplicates(string: &str) -> bool {
@@ -56,8 +57,9 @@ fn contains_duplicates(string: &str) -> bool {
     re.is_match(string).unwrap()
 }
 
-fn does_not_contain(string: &str, strings: &[&str]) -> bool {
-    strings.iter().all(|&s| !string.contains(s))
+fn does_not_contain(string: &str) -> bool {
+    let re = Regex::new(r"ab|cd|pq|xy").unwrap();
+    !re.is_match(string).unwrap()
 }
 
 #[cfg(test)]
