@@ -5,4 +5,7 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0.94"
+crypto = "0.5.1"
+fancy-regex = "0.14.0"
+md5 = "0.7.0"
 regex = "1.11.1"
