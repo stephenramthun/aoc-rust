@@ -8,6 +8,7 @@ pub mod day07;
 pub mod day08;
 pub mod day09;
 pub mod day10;
+mod day11;
 
 pub fn get_solver(day: u8) -> fn() {
     match day {
