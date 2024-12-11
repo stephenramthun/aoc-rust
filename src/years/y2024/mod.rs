@@ -8,7 +8,7 @@ pub mod day07;
 pub mod day08;
 pub mod day09;
 pub mod day10;
-mod day11;
+pub mod day11;
 
 pub fn get_solver(day: u8) -> fn() {
     match day {
@@ -22,6 +22,7 @@ pub fn get_solver(day: u8) -> fn() {
         8 => day08::solver,
         9 => day09::solver,
         10 => day10::solver,
+        11 => day11::solver,
         _ => panic!("Unknown day: {}", day),
     }
 }
