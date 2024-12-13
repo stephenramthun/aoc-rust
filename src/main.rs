@@ -5,6 +5,7 @@ use std::time::Instant;
 use years::{y2015, y2024};
 
 mod years;
+mod util;
 
 fn main() {
     let day = get_day();
